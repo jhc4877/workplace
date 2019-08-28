@@ -1,28 +1,11 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import XuApi from './XuApi';
 import utils from './utils';
 import TodayForecast from './TodayForecast';
 import DaysForecast from './DaysForecast';
 import WeatherIcon from './WeatherIcon';
 import '../../css/components/ReactWeather.scss';
-
-const propTypes = {
-  unit: PropTypes.oneOf(['metric', 'imperial']),
-  type: PropTypes.oneOf(['geo', 'city', 'auto']),
-  lat: PropTypes.string,
-  lon: PropTypes.string,
-  city: PropTypes.string,
-  forecast: PropTypes.oneOf(['today', '5days']),
-  apikey: PropTypes.string.isRequired,
-  lang: PropTypes.string
-};
-
-const defaultProps = {
-  unit: 'metric',
-  type: 'auto',
-  forecast: 'today',
-  lang: 'en'
-};
 
 class ReactWeather extends React.Component {
   constructor(props) {
@@ -89,7 +72,22 @@ class ReactWeather extends React.Component {
   }
 }
 
-ReactWeather.propTypes = propTypes;
-ReactWeather.defaultProps = defaultProps;
+ReactWeather.defaultProps = {
+  unit: 'metric',
+  type: 'auto',
+  forecast: 'today',
+  lang: 'en'
+};
+
+ReactWeather.propTypes = {
+  unit: PropTypes.oneOf(['metric', 'imperial']),
+  type: PropTypes.oneOf(['geo', 'city', 'auto']),
+  lat: PropTypes.string,
+  lon: PropTypes.string,
+  city: PropTypes.string,
+  forecast: PropTypes.oneOf(['today', '5days']),
+  apikey: PropTypes.string.isRequired,
+  lang: PropTypes.string
+}
 
 export default ReactWeather;

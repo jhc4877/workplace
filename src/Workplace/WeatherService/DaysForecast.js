@@ -1,13 +1,8 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import utils from './utils';
 import WeatherIcon from './WeatherIcon';
 import '../../css/components/DaysForecast.scss';
-
-const propTypes = {
-  forecast: PropTypes.string.isRequired,
-  unit: PropTypes.string.isRequired,
-  daysData: PropTypes.array.isRequired
-};
 
 const DaysForecast = (props) => {
   const { forecast, unit, daysData } = props;
@@ -37,6 +32,10 @@ const DaysForecast = (props) => {
   return (<div></div>);
 };
 
-DaysForecast.propTypes = propTypes;
+DaysForecast.propTypes = {
+  forecast: PropTypes.string.isRequired,
+  unit: PropTypes.string.isRequired,
+  daysData: PropTypes.array.isRequired
+};
 
 export default DaysForecast;
