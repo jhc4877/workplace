@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactWeather from 'react-open-weather';
-// import ReactWeather2 from './WeatherService/ReactWeather'
+import ReactWeather2 from './WeatherService/ReactWeather'
 import 'react-open-weather/lib/css/ReactWeather.css';
 
 class Workplace extends React.Component {
@@ -22,7 +22,7 @@ class Workplace extends React.Component {
                 lang="ko"
             />
         </div><br />
-        {/* <div>  
+        <div>  
             <ReactWeather2
                 forecast="todays"
                 apikey="10bc6d391be8422b803232333192005"
@@ -30,7 +30,7 @@ class Workplace extends React.Component {
                 city="Bundang"
                 lang="ko"
             />
-        </div> */}
+        </div>
       </div>
     )
   }
