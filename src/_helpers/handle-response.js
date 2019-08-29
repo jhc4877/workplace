@@ -1,4 +1,5 @@
 import { authenticationService } from '@/_services';
+import { stringify } from 'querystring';
 
 export function handleResponse(response) {
     return response.text().then(text => {
@@ -13,6 +14,8 @@ export function handleResponse(response) {
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
         }
+
+        console.log(`data : ${stringify(data)}`);
 
         return data;
     });

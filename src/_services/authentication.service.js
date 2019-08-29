@@ -16,12 +16,12 @@ function login(username, password) {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        // body: JSON.stringify({ username, password })
     };
 
     return fetch(`https://34.67.187.63/auth/users/signin?username=${username}&password=${password}`, requestOptions)
         .then(handleResponse)
         .then(requestTest)
+
         .then(user => {
             console.log(user.data, '1111112121212121212121212121212');
             // store user details and jwt token in local storage to keep user logged in between page refreshes
