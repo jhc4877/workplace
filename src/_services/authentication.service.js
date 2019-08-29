@@ -16,11 +16,15 @@ function login(username, password) {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+        //body: JSON.stringify({ username, password })
     };
 
-    return fetch(`https://34.67.187.63/users/?username=${username}&password=${password}`, requestOptions)
+    return fetch(`${config.apiUrl}/users/signin?username=${username}&password=${password}`, requestOptions)
+    //return fetch(`http://localhost:8080/users/authenticate`, requestOptions)
         .then(handleResponse)
+        // .then(token => {
+        //     console.log(`token : ${token}`);
+        // })
         .then(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             localStorage.setItem('currentUser', JSON.stringify(user));
