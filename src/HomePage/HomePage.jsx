@@ -14,15 +14,15 @@ class HomePage extends React.Component {
         };
     }
 
-    componentDidMount() {
-        userService.getAll().then(users => this.setState({ users }));
-    }
+    // componentDidMount() {
+    //     userService.getAll().then(users => this.setState({ users }));
+    // }
 
     render() {
         const { currentUser, users } = this.state;
         return (
             <div>
-                <h1>Hi {currentUser.firstName}!</h1>
+                <h1>Hi {currentUser.username}!</h1>
                 <div style={{ marginTop: '50px' }}>  
                     <ReactWeather
                         forecast="5days"
