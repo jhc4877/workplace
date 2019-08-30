@@ -41,7 +41,7 @@ class HomePage extends React.Component {
                 </div><br />
                 </div>
                 <div>
-                <Iframe url="https://34.67.187.63"
+                <Iframe url="https://34.67.187.63/chat"
                         width="100%"
                         height="300px"
                         id="myId"
