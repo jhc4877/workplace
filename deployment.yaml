@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: workplace-app
+  name: workplace-service
+  namespace: default
+spec:
+  ports:
+    - port: 8081
+      protocol: TCP
+      targetPort: 8081
+  selector:
+    app: workplace-app
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: workplace-app-deployment
+  labels:
+    app: workplace-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: workplace-app
+  template:
+    metadata:
+      labels:
+        app: workplace-app
+    spec:
+      containers:
+        - name: workplace-app
+          image: gcr.io/ic-cloud-native/workplace-app:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8081

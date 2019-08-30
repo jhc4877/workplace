@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ic-cloud-native-ing
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          serviceName: workplace-service
+          servicePort: 8081
+      - path: /auth
+        backend:
+          serviceName: auth-service
+          servicePort: 8080
+      - path: /graphql
+        backend:
+          serviceName: weather-service
+          servicePort: 3000
+      - path: /chat
+        backend:
+          serviceName: chat-service
+          servicePort: 3001
