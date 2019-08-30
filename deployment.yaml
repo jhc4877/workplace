@@ -7,9 +7,9 @@ metadata:
   namespace: default
 spec:
   ports:
-    - port: 8081
+    - port: 9081
       protocol: TCP
-      targetPort: 8081
+      targetPort: 9081
   selector:
     app: workplace-app
   type: NodePort
@@ -35,4 +35,4 @@ spec:
           image: gcr.io/ic-cloud-native/workplace-app:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8081
+            - containerPort: 9081
